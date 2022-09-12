@@ -32,7 +32,7 @@ License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
 
 ```bash
 git clone https://github.com/F0undzG4nz/fzbot1
-cd Ichigo-Kurosaki
+cd fzbot1
 yarn
 npm start
 ```
