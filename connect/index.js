@@ -419,13 +419,13 @@ ichi.serializeM = (m) => smsg(ichi, m, store)
    * @returns 
    */
    ichi.sendButtonMsg = (jid, text = '' , footer = '', but = []) =>{
-   let templateButtons = but
-   var templateMessage = {
+   let selectedButtons = but
+   var selectedMessage = {
    text: text,
    footer: footer,
-   templateButtons: templateButtons
+   selectedButtons: selectedButtons
    }
-   ichi.sendMessage(jid, templateMessage)
+   ichi.sendMessage(jid, selectedMessage)
    }
 
   /** Send Button 5 Image
@@ -439,7 +439,7 @@ ichi.serializeM = (m) => smsg(ichi, m, store)
    * @returns
    */
    ichi.sendButtonImg = async (jid , text = '' , footer = '', img, but = [], buff, options = {}) =>{
-   ichi.sendMessage(jid, { image: img, caption: text, footer: footer, templateButtons: but, ...options })
+   ichi.sendMessage(jid, { image: img, caption: text, footer: footer, selectedButtons: but, ...options })
    }
 
   /** Send Button 5 Location
@@ -453,7 +453,7 @@ ichi.serializeM = (m) => smsg(ichi, m, store)
    */
    ichi.sendButtonLoc = async (jid , text = '' , footer = '', lok, but = [], options = {}) =>{
    let bb = await ichi.reSize(lok, 300, 150)
-   ichi.sendMessage(jid, { location: { jpegThumbnail: bb }, caption: text, footer: footer, templateButtons: but, ...options })
+   ichi.sendMessage(jid, { location: { jpegThumbnail: bb }, caption: text, footer: footer, selectedButtons: but, ...options })
    }
 
   /** Send Button 5 Video
@@ -468,7 +468,7 @@ ichi.serializeM = (m) => smsg(ichi, m, store)
    */
    ichi.sendButtonVid = async (jid , text = '' , footer = '', vid, but = [], buff, options = {}) =>{
    let lol = await ichi.reSize(buf, 300, 150)
-   ichi.sendMessage(jid, { video: vid, jpegThumbnail: lol, caption: text, footer: footer, templateButtons: but, ...options })
+   ichi.sendMessage(jid, { video: vid, jpegThumbnail: lol, caption: text, footer: footer, selectedButtons: but, ...options })
    }
 
   /** Send Button 5 Gif
@@ -485,7 +485,7 @@ ichi.serializeM = (m) => smsg(ichi, m, store)
    let ahh = await ichi.reSize(buf, 300, 150)
    let a = [1,2]
    let b = a[Math.floor(Math.random() * a.length)]
-   ichi.sendMessage(jid, { video: gif, gifPlayback: true, gifAttribution: b, caption: text, footer: footer, jpegThumbnail: ahh, templateButtons: but, ...options })
+   ichi.sendMessage(jid, { video: gif, gifPlayback: true, gifAttribution: b, caption: text, footer: footer, jpegThumbnail: ahh, selectedButtons: but, ...options })
    }
 
   /**
